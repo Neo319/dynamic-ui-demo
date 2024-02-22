@@ -1,6 +1,6 @@
 # Project-template
 
-This project is intended as a template for future projects. The following packages have been set up with configuration files: webpack, webpack-cli, eslint, prettier, eslint-plugin-prettier, eslint-config-prettier, html-webpack-plugin, style-loader, css-loader.
+Creating modules for commonplace elements in practical frontend web development.
 
 ## Installation
 

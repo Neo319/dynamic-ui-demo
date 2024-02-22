@@ -1,1 +1,32 @@
 /* * {border: 1px solid red}; */
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+.slide-down.active {
+    animation-name: slideDown;
+    animation-duration: 1s;
+}
+
+.listItem:hover {
+    background-color: rgb(218, 218, 218);
+}
+
+.dropdown {
+    position: relative;
+    background-color: white; /* This serves as a cover from which the sliding menu emerges */
+    height: 4em; /* Height must match the length of the list, unless something else can cover */
+}
+
+.menu {
+    position: absolute;
+    z-index: -1;
+}

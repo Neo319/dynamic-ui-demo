@@ -72,7 +72,8 @@ body {
     height: 100%;
 }
 
-.sliding-right {
+/* used for animating both the dot and the image slider movement */
+.transition {
     transition: transform 0.5s ease;
 }
 
@@ -85,9 +86,19 @@ body {
 .tabCircle {
     width: 10px;
     height: 10px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: rgb(215, 215, 215);
     margin: 7px;
+}
+
+#dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 8px;
+    margin: 2px;
+    background-color: rgb(70, 70, 70);
+
+    position: absolute;
 }
 
 

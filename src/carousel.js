@@ -41,18 +41,19 @@ const carousel = function () {
     console.log(firstCircle)
     firstCircle.appendChild(dot) // default positioning is inside the first circle
     
-    
+    dot.classList.add('transition')
+    slider.classList.add('transition')
 
     
     function changeImage (index) {
         console.log(`selecting ${index}`)
         //changing image logic
+        const imageWidth = allImages[currentImage].offsetWidth
+        slider.style.transform = `translateX(${-imageWidth * currentImage}px)`
 
         //moving dot logic
         const circleGap = 24 //the distance to move by one circle, in px
         dot.style.transform = `translateX(${circleGap * currentImage}px)` 
-        
-        dot.classList.add('transition')
     }
     
 

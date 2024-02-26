@@ -5,6 +5,8 @@ const dropdown = function () {
 
   const hoverDiv = document.createElement('div') // the element which the user hovers over
   const menu = document.createElement('div') // the list which is rendered on hover
+  const container = document.createElement('div')
+  container.id = 'dropDownContainer'
 
   //the contents of hoverDiv
   hoverDiv.style = "border: 1px solid gray; width: 250px;" // editable
@@ -42,29 +44,23 @@ const dropdown = function () {
   menu.classList.add('slide-down') // defining CSS class for sliding animation
   menu.style.display = 'none' // the menu is hidden
 
-  mainDiv.addEventListener('mouseenter', function slideDown () {
+  container.addEventListener('mouseenter', function slideDown () {
     console.log('hover detected')
     menu.style.display = 'flex' // the menu is displayed rather than hidden
     menu.classList.add('active') //animation is triggered
+  })
 
-    mainDiv.addEventListener('mouseleave', function hide () {
+    container.addEventListener('mouseleave', function hide () {
       console.log('hover exit')
       menu.style.display = 'none' // the menu is hidden
       menu.classList.remove('active') 
-      
-      mainDiv.removeEventListener('mouseleave', hide)
     })
-  })
-
-
-
-
-
-
-  mainDiv.appendChild(hoverDiv)
-  mainDiv.appendChild(menu)
-
   
+
+  container.appendChild(hoverDiv)
+  container.appendChild(menu)
+
+  mainDiv.appendChild(container)
 }
 
 

@@ -29,4 +29,32 @@
 .menu {
     position: absolute;
     z-index: -1;
+    background-color: white;
+}
+
+.second-header {
+    /* give space for dropdown */
+    margin-top: 200px; 
+}
+
+
+/* Image carousel styling */
+
+#carouselContainer {
+    border: 2px solid gray;
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    
+    margin-bottom: 200px;
+    overflow: hidden;
+}
+
+#slider {
+    display: flex;
+    flex-direction: row;
+}
+
+.carouselImg {
+    min-width: 80vw;
 }

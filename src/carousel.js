@@ -17,6 +17,11 @@ const carousel = function () {
     const tabs = document.createElement('div')
     tabs.id = 'tabs'
 
+    const leftButton = document.createElement('button')
+    leftButton.textContent = '<-'
+    tabs.appendChild(leftButton)
+    leftButton.id = 'leftButton'
+
     //create a menu of divs that appear as circles to cycle through images 
     for (let i = 0; i <= imageCount; i++) {
         const newDivContainer = document.createElement('div')
@@ -32,7 +37,17 @@ const carousel = function () {
         tabs.appendChild(newDivContainer)
     }
 
+    const rightButton = document.createElement('button')
+    rightButton.textContent = '->'
+    tabs.appendChild(rightButton)
+    rightButton.id = 'rightButton'
+
+
     container.after(tabs) //tabs are appended after the slider container
+
+    
+
+
 
     // a dot that indicates which image is currently displayed
     const dot = document.createElement('div')
@@ -73,9 +88,6 @@ const carousel = function () {
                 currentImage = 0
                 changeImage(currentImage)
             }
-
-            
-
         }, 5000)
     }
     scroller() // initiating the loop

@@ -1,4 +1,4 @@
-/* * {border: 1px solid red}; */
+/* animations for dropdown menu */
 
 @keyframes slideDown {
     0% {
@@ -10,7 +10,11 @@
 }
 
 
+body {
+    margin: 0;
+}
 
+/* styling for dropdown menu */
 .slide-down.active {
     animation-name: slideDown;
     animation-duration: 1s;
@@ -41,9 +45,8 @@
 /* Image carousel styling */
 
 #carouselContainer {
-    border: 2px solid gray;
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 60vh;
     
     margin-bottom: 200px;
@@ -57,4 +60,18 @@
 
 .carouselImg {
     min-width: 80vw;
+    z-index: -1;
+}
+
+#carouselContainer button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 100px;
+    height: 100%;
+}
+
+.sliding-right {
+    transition: transform 0.5s ease;
 }

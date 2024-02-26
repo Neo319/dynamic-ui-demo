@@ -6,6 +6,7 @@ const carousel = function () {
 
     const container = document.getElementById('carouselContainer')
     const slider = document.getElementById('slider')
+    slider.classList.add('transition')
     const allImages = document.getElementsByClassName('carouselImg')
 
     let currentImage = 0 // the index of the image currently displayed
@@ -36,13 +37,13 @@ const carousel = function () {
     // a dot that indicates which image is currently displayed
     const dot = document.createElement('div')
     dot.id = 'dot'
+    dot.classList.add('transition')
+
 
     const firstCircle = document.querySelector('.tabCircle')
     console.log(firstCircle)
     firstCircle.appendChild(dot) // default positioning is inside the first circle
     
-    dot.classList.add('transition')
-    slider.classList.add('transition')
 
     
     function changeImage (index) {
@@ -55,9 +56,23 @@ const carousel = function () {
         const circleGap = 24 //the distance to move by one circle, in px
         dot.style.transform = `translateX(${circleGap * currentImage}px)` 
     }
+
+    // use timeout to scroll image every five seconds
+
+    function scroller () {
+        setTimeout(() => {
+            if (currentImage < imageCount) {
+                currentImage++
+                changeImage(currentImage)
+            } else {
+                currentImage = 0
+                changeImage(currentImage)
+            }
+            scroller() // looping 
+        }, 5000)
+    }
+scroller() // initiating the loop
     
-
-
 }
 
 export default carousel

@@ -13,28 +13,43 @@ const carousel = function () {
 
 
 
-    function right () {
-        // set a class on div #slider that activates a CSS animation, then remove it with a timeout 
-        console.log('sliding right')
-        if (currentImage !== imageCount) { // if not scrolled to the far right
-            currentImage++
-            console.log(currentImage)
+    // function right () {
+    //     // set a class on div #slider that activates a CSS animation, then remove it with a timeout 
+    //     console.log('sliding right')
+    //     if (currentImage !== imageCount) { // if not scrolled to the far right
+    //         currentImage++
+    //         console.log(currentImage)
             
-            const imageWidth = allImages[currentImage].offsetWidth 
-            slider.classList.add('sliding-right') //used to trigger an animation
-            slider.style.transform = `TranslateX(${-imageWidth * currentImage}px)`
+    //         const imageWidth = allImages[currentImage].offsetWidth 
+    //         slider.classList.add('sliding-right') //used to trigger an animation
+    //         slider.style.transform = `TranslateX(${-imageWidth * currentImage}px)`
 
-        } else {
-            console.log('too far right') // will be animated
-        }
-    }
+    //     } else {
+    //         console.log('too far right') // will be animated
+    //     }
+    // }
     
-    //button to move right
-    const rightBtn = document.createElement('button')
-    rightBtn.textContent = '>' // temp styling
-    rightBtn.addEventListener('click', right)
+    // //button to move right
+    // const rightBtn = document.createElement('button')
+    // rightBtn.textContent = '>' // temp styling
+    // rightBtn.addEventListener('click', right)
 
-    container.appendChild(rightBtn) 
+    // container.appendChild(rightBtn)
+
+    const tabs = document.createElement('div')
+    tabs.id = 'tabs'
+
+    //create a menu of divs that appear as circles to cycle through images 
+    for (let i = 0; i <= imageCount; i++) {
+        const newDiv = document.createElement('div')
+        newDiv.classList.add('tabCircle')
+        tabs.appendChild(newDiv)
+    }
+
+
+    container.after(tabs)
+
+    
 
 
 }

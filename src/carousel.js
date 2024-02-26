@@ -55,12 +55,17 @@ const carousel = function () {
         //moving dot logic
         const circleGap = 24 //the distance to move by one circle, in px
         dot.style.transform = `translateX(${circleGap * currentImage}px)` 
+
+        scroller() // looping the scroll on image change
     }
 
     // use timeout to scroll image every five seconds
-
+    let scrollTimer
+    
     function scroller () {
-        setTimeout(() => {
+        clearTimeout(scrollTimer) // clear timeout to pause when image is manually changed 
+
+        scrollTimer = setTimeout(() => {
             if (currentImage < imageCount) {
                 currentImage++
                 changeImage(currentImage)
@@ -68,10 +73,15 @@ const carousel = function () {
                 currentImage = 0
                 changeImage(currentImage)
             }
-            scroller() // looping 
+
+            
+
         }, 5000)
     }
-scroller() // initiating the loop
+    scroller() // initiating the loop
+
+    
+
     
 }
 

@@ -44,6 +44,26 @@ const carousel = function () {
 
     container.after(tabs) //tabs are appended after the slider container
 
+
+    leftButton.addEventListener('click', () => {
+        if (currentImage != 0) {
+            currentImage--
+            changeImage()
+        } else {
+            currentImage = imageCount //wrap to other end
+            changeImage()
+        }
+    })
+    rightButton.addEventListener('click', () => {
+        if (currentImage < imageCount) {
+            currentImage++
+            changeImage()
+        } else {
+            currentImage = 0 //wrap to other end
+            changeImage()
+        }
+    })
+
     
 
 

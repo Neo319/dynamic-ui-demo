@@ -42,7 +42,6 @@ const carousel = function () {
     tabs.appendChild(rightButton)
     rightButton.id = 'rightButton'
 
-
     container.after(tabs) //tabs are appended after the slider container
 
     
